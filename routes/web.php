@@ -2,6 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\HomeController;
+
+//Admin
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\GenreController;
+use App\Http\Controllers\CountryController;
+use App\Http\Controllers\MovieController;
+use App\Http\Controllers\EpisodeController;
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,3 +31,15 @@ Route::get('/phim-bo', [IndexController::class, 'tvshows'])->name('tvshows');
 Route::get('/dang-ky', [IndexController::class, 'signup'])->name('signup');
 Route::get('/dang-nhap', [IndexController::class, 'signin'])->name('signin');
 Route::get('/quen-mat-khau', [IndexController::class, 'forgotpassword'])->name('forgotpassword');
+
+Auth::routes();
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+//Admin
+Route::resource('category', CategoryController::class);
+Route::post('resorting', [CategoryController::class,'resorting'])->name('resorting');
+Route::resource('genre', GenreController::class);
+Route::resource('country', CountryController::class);
+Route::resource('episode', EpisodeController::class);
+Route::resource('movie', MovieController::class);
