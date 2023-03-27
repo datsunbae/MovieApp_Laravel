@@ -26,6 +26,9 @@
 		<link rel="stylesheet" href="{{ asset('admin/plugins/daterangepicker/daterangepicker.css')}}">
 		<!-- summernote -->
 		<link rel="stylesheet" href="{{ asset('admin/plugins/summernote/summernote-bs4.min.css')}}">
+		<!-- datatables -->
+		<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+		<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
 	</head>
 	<body class="hold-transition sidebar-mini layout-fixed">
 		<div class="wrapper">
@@ -125,5 +128,8 @@
 		<script src="{{ asset('admin/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 		<!-- AdminLTE App -->
 		<script src="{{ asset('admin/js/adminlte.js')}}"></script>
+		$(document).ready( function () {
+   			$('#tablephim').DataTable();
+		} );
 	</body>
 </html>
