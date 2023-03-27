@@ -45,7 +45,7 @@
                   </td>
                   <td>{{$cate->category->title}}</td>
                   <td>{{$cate->genre->title}}</td>
-                  <td>{{$cate->country->title}}</td>
+                  
                   <td>
                       {!! Form::open(['method'=>'DELETE','route'=>['movie.destroy',$cate->id],'onsubmit'=>'return confirm("Bạn có chắc muốn xóa?")']) !!}
                         {!! Form::submit('Xóa', ['class'=>'btn btn-danger']) !!}
