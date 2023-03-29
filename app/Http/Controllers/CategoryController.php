@@ -24,7 +24,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        $list = Category::orderBy('position','ASC')->get();
+        $list = Category::all();
         return view('admin.category.form', compact('list'));
     }
 
@@ -66,7 +66,7 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $category = Category::find($id);
-        $list = Category::orderBy('position','ASC')->get();
+        $list = Category::all();
         return view('admin.category.form', compact('list','category'));
     }
 

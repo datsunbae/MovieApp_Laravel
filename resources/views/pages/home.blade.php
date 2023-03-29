@@ -23,85 +23,26 @@
 			</div>
 			<div class="col-12">
 				<div class="owl-carousel home__carousel">
+					@foreach($moviehot as $key => $hot)
 					<div class="item">
 						<!-- card -->
 						<div class="card card--big">
 							<div class="card__cover">
-								<img src="img/covers/cover.jpg" alt="">
+								<img src="{{asset('uploads/movie/' .$hot->image)}}" alt="">
 								<a href="{{route('movies')}}" class="card__play">
 								<i class="icon ion-ios-play"></i>
 								</a>
 							</div>
 							<div class="card__content">
-								<h3 class="card__title"><a href="{{route('movies')}}">I Dream in Another Language</a></h3>
+								<h3 class="card__title"><a href="{{route('movies')}}">{{$hot->title}}</a></h3>
 								<span class="card__category">
-								<a href="#">Action</a>
-								<a href="#">Triler</a>
+								{{-- <a href="#">{{$hot->genre->title}}</a> --}}
 								</span>
-								<span class="card__rate"><i class="icon ion-ios-star"></i>8.4</span>
 							</div>
 						</div>
 						<!-- end card -->
 					</div>
-					<div class="item">
-						<!-- card -->
-						<div class="card card--big">
-							<div class="card__cover">
-								<img src="img/covers/cover2.jpg" alt="">
-								<a href="{{route('tvshows')}}" class="card__play">
-								<i class="icon ion-ios-play"></i>
-								</a>
-							</div>
-							<div class="card__content">
-								<h3 class="card__title"><a href="{{route('tvshows')}}">Benched</a></h3>
-								<span class="card__category">
-								<a href="#">Comedy</a>
-								</span>
-								<span class="card__rate"><i class="icon ion-ios-star"></i>7.1</span>
-							</div>
-						</div>
-						<!-- end card -->
-					</div>
-					<div class="item">
-						<!-- card -->
-						<div class="card card--big">
-							<div class="card__cover">
-								<img src="img/covers/cover3.jpg" alt="">
-								<a href="#" class="card__play">
-								<i class="icon ion-ios-play"></i>
-								</a>
-							</div>
-							<div class="card__content">
-								<h3 class="card__title"><a href="#">Whitney</a></h3>
-								<span class="card__category">
-								<a href="#">Romance</a>
-								<a href="#">Drama</a>
-								</span>
-								<span class="card__rate"><i class="icon ion-ios-star"></i>6.3</span>
-							</div>
-						</div>
-						<!-- end card -->
-					</div>
-					<div class="item">
-						<!-- card -->
-						<div class="card card--big">
-							<div class="card__cover">
-								<img src="img/covers/cover4.jpg" alt="">
-								<a href="#" class="card__play">
-								<i class="icon ion-ios-play"></i>
-								</a>
-							</div>
-							<div class="card__content">
-								<h3 class="card__title"><a href="#">Blindspotting</a></h3>
-								<span class="card__category">
-								<a href="#">Comedy</a>
-								<a href="#">Drama</a>
-								</span>
-								<span class="card__rate"><i class="icon ion-ios-star"></i>7.9</span>
-							</div>
-						</div>
-						<!-- end card -->
-					</div>
+					@endforeach
 				</div>
 			</div>
 		</div>
@@ -211,7 +152,7 @@
 									<div class="card__content">
 										<h3 class="card__title"><a href="#">{{$mov->title}}</a></h3>
 										<span class="card__category">
-										<a href="#">{{$mov->genre->title}}</a>
+										{{-- <a href="#">{{$mov->genre->title}}</a> --}}
 										</span>
 										<div class="card__description">
 											<p>{{$mov->description}}</p>
@@ -303,42 +244,4 @@
 	</div>
 </section>
 <!-- end content -->
-<!-- expected premiere -->
-<section class="section section--bg" data-bg="img/section/section.jpg">
-	<div class="container">
-		<div class="row">
-			<!-- section title -->
-			<div class="col-12">
-				<h2 class="section__title">PHIM ĐỘC QUYỀN</h2>
-			</div>
-			<!-- end section title -->
-			<!-- card -->
-			<div class="col-6 col-sm-4 col-lg-3 col-xl-2">
-				<div class="card">
-					<div class="card__cover">
-						<img src="img/covers/cover.jpg" alt="">
-						<a href="#" class="card__play">
-						<i class="icon ion-ios-play"></i>
-						</a>
-					</div>
-					<div class="card__content">
-						<h3 class="card__title"><a href="#">I Dream in Another Language</a></h3>
-						<span class="card__category">
-						<a href="#">Action</a>
-						<a href="#">Triler</a>
-						</span>
-						<span class="card__rate"><i class="icon ion-ios-star"></i>8.4</span>
-					</div>
-				</div>
-			</div>
-			<!-- end card -->
-			<!-- section btn -->
-			<div class="col-12">
-				<a href="#" class="section__btn">Show more</a>
-			</div>
-			<!-- end section btn -->
-		</div>
-	</div>
-</section>
-<!-- end expected premiere -->
 @endsection

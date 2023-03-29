@@ -20,15 +20,15 @@
                     @endif
                         <div class="form-group">
                             {!! Form::label('title', 'Tên thể loại', []) !!}
-                            {!! Form::text('title', isset($genre) ? $genre->title : '', ['class'=>'form-control','placeholder'=>'...','id'=>'slug','onkeyup'=>'ChangeToSlug()']) !!}
+                            {!! Form::text('title', isset($genre) ? $genre->title : '', ['class'=>'form-control','id'=>'slug','onkeyup'=>'ChangeToSlug()']) !!}
                         </div>
                         <div class="form-group">
                             {!! Form::label('slug', 'Đường dẫn', []) !!}
-                            {!! Form::text('slug', isset($genre) ? $genre->slug : '', ['class'=>'form-control','placeholder'=>'...','id'=>'convert_slug']) !!}
+                            {!! Form::text('slug', isset($genre) ? $genre->slug : '', ['class'=>'form-control','id'=>'convert_slug']) !!}
                         </div>
                         <div class="form-group">
                             {!! Form::label('description', 'Mô tả thể loại', []) !!}
-                            {!! Form::textarea('description', isset($genre) ? $genre->description : '', ['style'=>'resize:none', 'class'=>'form-control','placeholder'=>'...','id'=>'description']) !!}
+                            {!! Form::textarea('description', isset($genre) ? $genre->description : '', ['style'=>'resize:none', 'class'=>'form-control','id'=>'description']) !!}
                         </div>
                         <div class="form-group">
                             {!! Form::label('status', 'Trạng thái', []) !!}
@@ -70,6 +70,7 @@
                   <td>
                       {!! Form::open(['method'=>'DELETE','route'=>['genre.destroy',$cate->id],'onsubmit'=>'return confirm("Bạn có chắc muốn xóa?")']) !!}
                         {!! Form::submit('Xóa', ['class'=>'btn btn-danger']) !!}
+                        <br></br>
                       {!! Form::close() !!}
                       <a href="{{route('genre.edit',$cate->id)}}" class="btn btn-warning">Sửa</a>
                   </td>

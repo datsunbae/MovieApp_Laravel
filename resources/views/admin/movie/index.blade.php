@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -49,6 +48,7 @@
                   <td>
                       {!! Form::open(['method'=>'DELETE','route'=>['movie.destroy',$cate->id],'onsubmit'=>'return confirm("Bạn có chắc muốn xóa?")']) !!}
                         {!! Form::submit('Xóa', ['class'=>'btn btn-danger']) !!}
+                        <br></br>
                       {!! Form::close() !!}
                       <a href="{{route('movie.edit',$cate->id)}}" class="btn btn-warning">Sửa</a>
                   </td>

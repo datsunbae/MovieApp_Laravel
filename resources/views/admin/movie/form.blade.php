@@ -6,6 +6,7 @@
         <div class="col-md-12">
             <div class="card">
               <a href="{{route('movie.index')}}" class="btn btn-primary">Liệt Kê Danh Sách Phim</a>
+              <br>
                 <div class="card-header">Quản Lý Phim</div>
 
                 <div class="card-body">
@@ -21,19 +22,19 @@
                     @endif
                         <div class="form-group">
                             {!! Form::label('title', 'Tên phim', []) !!}
-                            {!! Form::text('title', isset($movie) ? $movie->title : '', ['class'=>'form-control','placeholder'=>'...','id'=>'slug','onkeyup'=>'ChangeToSlug()']) !!}
+                            {!! Form::text('title', isset($movie) ? $movie->title : '', ['class'=>'form-control','id'=>'slug','onkeyup'=>'ChangeToSlug()']) !!}
                         </div>
                         <div class="form-group">
                             {!! Form::label('tên tiếng anh', 'Tên tiếng anh', []) !!}
-                            {!! Form::text('name_eng', isset($movie) ? $movie->name_eng : '', ['class'=>'form-control','placeholder'=>'...']) !!}
+                            {!! Form::text('name_eng', isset($movie) ? $movie->name_eng : '', ['class'=>'form-control']) !!}
                         </div>
                         <div class="form-group">
                             {!! Form::label('slug', 'Đường dẫn', []) !!}
-                            {!! Form::text('slug', isset($movie) ? $movie->slug : '', ['class'=>'form-control','placeholder'=>'...','id'=>'convert_slug']) !!}
+                            {!! Form::text('slug', isset($movie) ? $movie->slug : '', ['class'=>'form-control','id'=>'convert_slug']) !!}
                         </div>
                         <div class="form-group">
                             {!! Form::label('description', 'Mô tả phim', []) !!}
-                            {!! Form::textarea('description', isset($movie) ? $movie->description : '', ['style'=>'resize:none', 'class'=>'form-control','placeholder'=>'...','id'=>'description']) !!}
+                            {!! Form::textarea('description', isset($movie) ? $movie->description : '', ['style'=>'resize:none', 'class'=>'form-control','id'=>'description']) !!}
                         </div>
                         <div class="form-group">
                             {!! Form::label('status', 'Trạng thái', []) !!}
