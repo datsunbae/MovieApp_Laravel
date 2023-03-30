@@ -128,8 +128,10 @@
 		<script src="{{ asset('admin/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 		<!-- AdminLTE App -->
 		<script src="{{ asset('admin/js/adminlte.js')}}"></script>
-		$(document).ready( function () {
-   			$('#tablephim').DataTable();
-		} );
+		<script>
+			$(document).ready( function () {
+   				$('#tablephim').DataTable();
+			} );
+		</script>
 	</body>
 </html>
