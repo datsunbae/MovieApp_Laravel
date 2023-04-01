@@ -28,7 +28,12 @@
 		<link rel="stylesheet" href="{{ asset('admin/plugins/summernote/summernote-bs4.min.css')}}">
 		<!-- datatables -->
 		<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
-		<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+		<!-- Favicons -->
+		<link rel="icon" type="image/png" href="icon/favicon-32x32.png" sizes="32x32">
+		<link rel="apple-touch-icon" href="icon/favicon-32x32.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="icon/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="icon/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="icon/apple-touch-icon-144x144.png">
 	</head>
 	<body class="hold-transition sidebar-mini layout-fixed">
 		<div class="wrapper">
@@ -128,10 +133,12 @@
 		<script src="{{ asset('admin/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 		<!-- AdminLTE App -->
 		<script src="{{ asset('admin/js/adminlte.js')}}"></script>
-		<script>
+		<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+		<script type="text/javascript">
 			$(document).ready( function () {
-   				$('#tablephim').DataTable();
+   				$('#movietable').DataTable();
 			} );
 		</script>
+    </script>
 	</body>
 </html>
