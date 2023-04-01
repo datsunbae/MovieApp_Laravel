@@ -26,7 +26,7 @@ Route::get('/', [IndexController::class, 'home'])->name('homepage');
 Route::get('/categoryurl/{slug}', [IndexController::class, 'category'])->name('category');
 Route::get('/genreurl/{slug}', [IndexController::class, 'genre'])->name('genre');
 Route::get('/countryurl/{slug}', [IndexController::class, 'country'])->name('country');
-Route::get('/moviesurl', [IndexController::class, 'movies'])->name('movies');
+Route::get('/moviesurl/{slug}', [IndexController::class, 'movies'])->name('movies');
 Route::get('/tvshowsurl', [IndexController::class, 'tvshows'])->name('tvshows');
 Route::get('/signupurl', [IndexController::class, 'signup'])->name('signup');
 Route::get('/signinurl', [IndexController::class, 'signin'])->name('signin');
@@ -34,7 +34,7 @@ Route::get('/forgotpasswordurl', [IndexController::class, 'forgotpassword'])->na
 
 Auth::routes();
 
-Route::get('/admininterface', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 //Admin
 Route::resource('category', CategoryController::class);
