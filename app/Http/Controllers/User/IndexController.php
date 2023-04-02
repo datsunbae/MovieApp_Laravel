@@ -11,15 +11,20 @@ use DB;
 
 class IndexController extends Controller
 {
-    public function home(){
-        $moviehot = Movie::where('phim_hot',1)->where('status',1)->get();
-        
+    public function home(){ 
         $category = Category::orderBy('position','ASC')->where('status',1)->get();
         $genre = Genre::orderBy('id','DESC')->get();
         $country = Country::orderBy('id','DESC')->get();
 
-        $category_home = Category::with('movie')->orderBy('id','DESC')->where('status',1)->get();
-    	return view('pages.home', compact('category','genre','country','category_home','moviehot'));
+        $category_le = Category::with('movie')->orderBy('id','DESC')->where('id',2)->where('status', 1)->get();
+        $category_hoathinh = Category::with('movie')->orderBy('id','DESC')->where('id',4)->where('status', 1)->get();
+        $category_chieurap = Category::with('movie')->orderBy('id','DESC')->where('id',6)->where('status', 1)->get();
+
+
+        $moviehot = Movie::where('phim_hot',1)->where('status',1)->get();
+        $movie_new = Movie::where('status',1)->orderBy('id','DESC')->get();
+
+    	return view('pages.home', compact('category','genre','country','category_le','category_hoathinh','category_chieurap','moviehot','movie_new'));
     }
     public function category($slug){
         $category = Category::orderBy('position','ASC')->where('status',1)->get();

@@ -13,7 +13,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
-				<h1 class="home__title"><b>PHIM</b> MỚI NHẤT</h1>
+				<h1 class="home__title"><b>PHIM</b> HOT</h1>
 				<button class="home__nav home__nav--prev" type="button">
 				<i class="icon ion-ios-arrow-round-back"></i>
 				</button>
@@ -61,13 +61,13 @@
 					<!-- content tabs nav -->
 					<ul class="nav nav-tabs content__tabs" id="content__tabs" role="tablist">
 						<li class="nav-item">
-							<a class="nav-link active" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true">PHIM LẺ</a>
+							<a class="nav-link active" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true">PHIM MỚI</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false">PHIM CHIẾU RẠP</a>
+							<a class="nav-link" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false">PHIM LẺ</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false">PHIM BỘ</a>
+							<a class="nav-link" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false">PHIM CHIẾU RẠP</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" data-toggle="tab" href="#tab-4" role="tab" aria-controls="tab-4" aria-selected="false">PHIM HOẠT HÌNH</a>
@@ -77,15 +77,14 @@
 					<!-- content mobile tabs nav -->
 					<div class="content__mobile-tabs" id="content__mobile-tabs">
 						<div class="content__mobile-tabs-btn dropdown-toggle" role="navigation" id="mobile-tabs" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<input type="button" value="New items">
+							<input type="button" value="Danh mục phim">
 							<span></span>
 						</div>
 						<div class="content__mobile-tabs-menu dropdown-menu" aria-labelledby="mobile-tabs">
 							<ul class="nav nav-tabs" role="tablist">
-								<li class="nav-item"><a class="nav-link active" id="1-tab" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true">NEW RELEASES</a></li>
-								<li class="nav-item"><a class="nav-link" id="2-tab" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false">MOVIES</a></li>
-								<li class="nav-item"><a class="nav-link" id="3-tab" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false">TV SERIES</a></li>
-								<li class="nav-item"><a class="nav-link" id="4-tab" data-toggle="tab" href="#tab-4" role="tab" aria-controls="tab-4" aria-selected="false">CARTOONS</a></li>
+								<li class="nav-item"><a class="nav-link active" id="1-tab" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true">PHIM LẺ</a></li>
+								<li class="nav-item"><a class="nav-link" id="2-tab" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false">PHIM CHIẾU RẠP</a></li>
+								<li class="nav-item"><a class="nav-link" id="3-tab" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false">PHIM HOẠT HÌNH</a></li>
 							</ul>
 						</div>
 					</div>
@@ -99,8 +98,41 @@
 		<div class="tab-content" id="myTabContent">
 			<div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="1-tab">
 				<div class="row">
-					@foreach($category_home as $key => $cate_home)
-					@foreach($cate_home->movie->take(8) as $key => $mov)  
+					@foreach($movie_new->take(8) as $key => $mov)
+					<!-- card -->
+					<div class="col-6 col-sm-12 col-lg-6">
+						<div class="card card--list">
+							<div class="row">
+								<div class="col-12 col-sm-4">
+									<div class="card__cover">
+										<img src="{{asset('uploads/movie/' .$mov->image)}}">
+										<a href="{{route('movies',$mov->slug)}}" class="card__play">
+										<i class="icon ion-ios-play"></i>
+										</a>
+									</div>
+								</div>
+								<div class="col-12 col-sm-8">
+									<div class="card__content">
+										<h3 class="card__title"><a href="{{route('movies',$mov->slug)}}">{{$mov->title}}</a></h3>
+										<span class="card__category">
+										<a href="#">{{$mov->genre->title}}</a>
+										</span>
+										<div class="card__description">
+											<p>{{$mov->description}}</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- end card -->
+					@endforeach
+				</div>
+			</div>
+			<div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="2-tab">
+				<div class="row">
+					@foreach($category_le as $key => $cate_le)
+					@foreach($cate_le->movie->take(8) as $key => $mov)  
 					<!-- card -->
 					<div class="col-6 col-sm-12 col-lg-6">
 						<div class="card card--list">
@@ -132,10 +164,10 @@
 					@endforeach
 				</div>
 			</div>
-			<div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="2-tab">
+			<div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="3-tab">
 				<div class="row">
-					@foreach($category_home as $key => $cate_home)
-					@foreach($cate_home->movie->take(8) as $key => $mov)  
+					@foreach($category_chieurap as $key => $cate_chieurap)
+					@foreach($cate_chieurap->movie->take(8) as $key => $mov)  
 					<!-- card -->
 					<div class="col-6 col-sm-12 col-lg-6">
 						<div class="card card--list">
@@ -167,52 +199,39 @@
 					@endforeach
 				</div>
 			</div>
-			<div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="3-tab">
-				<div class="row">
-					<!-- card -->
-					<div class="col-6 col-sm-4 col-lg-3 col-xl-2">
-						<div class="card">
-							<div class="card__cover">
-								<img src="img/covers/cover2.jpg" alt="">
-								<a href="#" class="card__play">
-								<i class="icon ion-ios-play"></i>
-								</a>
-							</div>
-							<div class="card__content">
-								<h3 class="card__title"><a href="#">I Dream in Another Language</a></h3>
-								<span class="card__category">
-								<a href="#">Action</a>
-								<a href="#">Triler</a>
-								</span>
-								<span class="card__rate"><i class="icon ion-ios-star"></i>8.4</span>
-							</div>
-						</div>
-					</div>
-					<!-- end card -->
-				</div>
-			</div>
 			<div class="tab-pane fade" id="tab-4" role="tabpanel" aria-labelledby="4-tab">
 				<div class="row">
+					@foreach($category_hoathinh as $key => $cate_hoathinh)
+					@foreach($cate_hoathinh->movie->take(8) as $key => $mov)  
 					<!-- card -->
-					<div class="col-6 col-sm-4 col-lg-3 col-xl-2">
-						<div class="card">
-							<div class="card__cover">
-								<img src="img/covers/cover.jpg" alt="">
-								<a href="#" class="card__play">
-								<i class="icon ion-ios-play"></i>
-								</a>
-							</div>
-							<div class="card__content">
-								<h3 class="card__title"><a href="#">I Dream in Another Language</a></h3>
-								<span class="card__category">
-								<a href="#">Action</a>
-								<a href="#">Triler</a>
-								</span>
-								<span class="card__rate"><i class="icon ion-ios-star"></i>8.4</span>
+					<div class="col-6 col-sm-12 col-lg-6">
+						<div class="card card--list">
+							<div class="row">
+								<div class="col-12 col-sm-4">
+									<div class="card__cover">
+										<img src="{{asset('uploads/movie/' .$mov->image)}}">
+										<a href="" class="card__play">
+										<i class="icon ion-ios-play"></i>
+										</a>
+									</div>
+								</div>
+								<div class="col-12 col-sm-8">
+									<div class="card__content">
+										<h3 class="card__title"><a href="">{{$mov->title}}</a></h3>
+										<span class="card__category">
+											<a href="">{{$mov->genre->title}}</a>
+										</span>
+										<div class="card__description">
+											<p>{{$mov->description}}</p>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 					<!-- end card -->
+					@endforeach
+					@endforeach
 				</div>
 			</div>
 		</div>

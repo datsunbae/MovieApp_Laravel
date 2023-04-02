@@ -39,6 +39,10 @@
 												{!! Form::label('status', 'Trạng thái', []) !!}
 												{!! Form::select('status', ['1'=>'Hiển thị','0'=>'Không hiển thị'], isset($category) ? $category->status : '', ['class'=>'form-control']) !!}
 											</div>
+											<div class="form-group">
+												{!! Form::label('position', 'Vị trí', []) !!}
+												{!! Form::text('position', isset($category) ? $category->position : '', ['style'=>'resize:none', 'class'=>'form-control','id'=>'position']) !!}
+											</div>
 											@if(!isset($category))
 											{!! Form::submit('Thêm Danh Mục', ['class'=>'btn btn-success']) !!}
 											@else
