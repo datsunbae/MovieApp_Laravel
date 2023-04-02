@@ -74,24 +74,6 @@
 									<!-- end dropdown -->
 								</ul>
 								<!-- end header nav -->
-								<!-- header auth -->
-								<div class="header__auth">
-									<button class="header__search-btn" type="button">
-									<i class="icon ion-ios-search"></i>
-									</button>
-									<a href="{{route('signin')}}" class="header__sign-in">
-									<i class="icon ion-ios-log-in"></i>
-									<span>Đăng nhập</span>
-									</a>
-								</div>
-								<!-- end header auth -->
-								<!-- header menu btn -->
-								<button class="header__btn" type="button">
-								<span></span>
-								<span></span>
-								<span></span>
-								</button>
-								<!-- end header menu btn -->
 							</div>
 						</div>
 					</div>

@@ -11,7 +11,7 @@
 							<div id="example1_wrapper">
 								<div class="row">
 									<div class="col-sm-12">
-										<a href="{{route('movie.index')}}" class="btn btn-primary">Liệt Kê Danh Sách Phim</a>
+										<a href="{{route('movie.index')}}" class="btn btn-primary">Danh Sách Phim</a>
 										<div class="card-header">Quản Lý Phim</div>
 										<div class="card-body">
 											@if (session('status'))
@@ -39,6 +39,10 @@
 											<div class="form-group">
 												{!! Form::label('description', 'Mô tả phim', []) !!}
 												{!! Form::textarea('description', isset($movie) ? $movie->description : '', ['style'=>'resize:none', 'class'=>'form-control','id'=>'description']) !!}
+											</div>
+											<div class="form-group">
+												{!! Form::label('sotap', 'Số tập', []) !!}
+												{!! Form::text('sotap', isset($movie) ? $movie->sotap : '', ['class'=>'form-control']) !!}
 											</div>
 											<div class="form-group">
 												{!! Form::label('status', 'Trạng thái', []) !!}
