@@ -43,6 +43,7 @@ class CategoryController extends Controller
         $category->slug = $data['slug'];
         $category->description = $data['description'];
         $category->status = $data['status'];
+        $category->position = $data['position'];
         $category->save();
         return redirect()->back();
     }
@@ -86,6 +87,7 @@ class CategoryController extends Controller
         $category->slug = $data['slug'];
         $category->description = $data['description'];
         $category->status = $data['status'];
+        $category->position = $data['position'];
         $category->save();
         return redirect()->back();
     }
