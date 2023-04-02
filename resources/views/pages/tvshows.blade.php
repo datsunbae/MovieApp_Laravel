@@ -10,7 +10,7 @@
       <div class="row">
          <!-- title -->
          <div class="col-12">
-            <h1 class="details__title">John Wick 3</h1>
+            <h1 class="details__title">{{$movie->title}}</h1>
          </div>
          <!-- end title -->
          <!-- content -->
@@ -20,7 +20,7 @@
                   <!-- card cover -->
                   <div class="col-12 col-sm-4 col-md-4 col-lg-3 col-xl-3">
                      <div class="card__cover">
-                        <img src="uploads/movie/johnwick36286.jpeg">
+                        <img src="{{asset('uploads/movie/' .$movie->image)}}">
                      </div>
                   </div>
                   <!-- end card cover -->
@@ -28,17 +28,14 @@
                   <div class="col-12 col-sm-8 col-md-8 col-lg-9 col-xl-9">
                      <div class="card__content">
                         <div class="card__wrap">
-                           <ul class="card__list">
-                              <li>HD</li>
-                              <li>18+</li>
+                           <ul class="card__meta">
+                              <li><span>Danh mục:</span> <a href="#">{{$movie->category->title}}</a></li>
+                              <li><span>Quốc gia:</span> <a href="#">{{$movie->country->title}}</a></li>
+                              <li><span>Thể loại:</span> <a href="#">{{$movie->genre->title}}</a></li>
                            </ul>
                         </div>
-                        <ul class="card__meta">
-                           <li><span>Thể loại:</span> <a href="#">Hành động</a>
-                           </li>
-                        </ul>
                         <div class="card__description card__description--details">
-                           Sát thủ John Wick: Phần 3 – Chuẩn bị chiến tranh là một bộ phim hành động tội phạm Mỹ năm 2019, với sự tham gia diễn xuất của Keanu Reeves trong vai nhân vật chính trong phần ba của loạt phim Sát thủ John Wick, sau Sát thủ John Wick và Sát thủ John Wick: Phần 2.
+                           {{$movie->description}}
                         </div>
                      </div>
                   </div>

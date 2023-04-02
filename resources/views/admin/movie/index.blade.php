@@ -17,6 +17,7 @@
 													<th class="sorting sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending">ID</th>
 													<th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Tên phim</th>
 													<th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Hình ảnh</th>
+													<th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Số tập</th>
 													<th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Phim hot</th>
 													<th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Trạng thái</th>
 													<th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Danh mục</th>
@@ -31,10 +32,11 @@
 													<td class="dtr-control sorting_1" tabindex="0">{{$key}}</td>
 													<td>{{$cate->title}}</td>
 													<td><img width="100" src="{{asset('uploads/movie/'.$cate->image)}}"></td>
+													<td>{{$cate->sotap}}</td>
 													<td>@if($cate->phim_hot==0)
-														Không
+															Không
 														@else
-														Có
+															Có
 														@endif
 													</td>
 													<td>{{$cate->slug}}</td>

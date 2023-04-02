@@ -25,10 +25,7 @@ Route::get('/categoryurl/{slug}', [IndexController::class, 'category'])->name('c
 Route::get('/genreurl/{slug}', [IndexController::class, 'genre'])->name('genre');
 Route::get('/countryurl/{slug}', [IndexController::class, 'country'])->name('country');
 Route::get('/moviesurl/{slug}', [IndexController::class, 'movies'])->name('movies');
-Route::get('/tvshowsurl', [IndexController::class, 'tvshows'])->name('tvshows');
-Route::get('/signupurl', [IndexController::class, 'signup'])->name('signup');
-Route::get('/signinurl', [IndexController::class, 'signin'])->name('signin');
-Route::get('/forgotpasswordurl', [IndexController::class, 'forgotpassword'])->name('forgotpassword');
+Route::get('/tap', [IndexController::class, 'episode'])->name('tap');
 
 Auth::routes();
 
@@ -40,4 +37,5 @@ Route::post('resorting', [CategoryController::class,'resorting'])->name('resorti
 Route::resource('genre', GenreController::class);
 Route::resource('country', CountryController::class);
 Route::resource('episode', EpisodeController::class);
+Route::get('select-movie', [EpisodeController::class,'select_movie'])->name('select-movie');
 Route::resource('movie', MovieController::class);

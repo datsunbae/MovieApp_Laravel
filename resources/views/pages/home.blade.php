@@ -175,14 +175,14 @@
 								<div class="col-12 col-sm-4">
 									<div class="card__cover">
 										<img src="{{asset('uploads/movie/' .$mov->image)}}">
-										<a href="" class="card__play">
+										<a href="{{route('movies',$mov->slug)}}" class="card__play">
 										<i class="icon ion-ios-play"></i>
 										</a>
 									</div>
 								</div>
 								<div class="col-12 col-sm-8">
 									<div class="card__content">
-										<h3 class="card__title"><a href="">{{$mov->title}}</a></h3>
+										<h3 class="card__title"><a href="{{route('movies',$mov->slug)}}">{{$mov->title}}</a></h3>
 										<span class="card__category">
 											<a href="">{{$mov->genre->title}}</a>
 										</span>
@@ -210,14 +210,14 @@
 								<div class="col-12 col-sm-4">
 									<div class="card__cover">
 										<img src="{{asset('uploads/movie/' .$mov->image)}}">
-										<a href="" class="card__play">
+										<a href="{{route('movies',$mov->slug)}}" class="card__play">
 										<i class="icon ion-ios-play"></i>
 										</a>
 									</div>
 								</div>
 								<div class="col-12 col-sm-8">
 									<div class="card__content">
-										<h3 class="card__title"><a href="">{{$mov->title}}</a></h3>
+										<h3 class="card__title"><a href="{{route('movies',$mov->slug)}}">{{$mov->title}}</a></h3>
 										<span class="card__category">
 											<a href="">{{$mov->genre->title}}</a>
 										</span>
