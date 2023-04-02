@@ -2,7 +2,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
 	<!-- Brand Logo -->
 	<div style="text-align: center;">
-	<a href="/home" class="brand-link">
+	<a href="/admininterface" class="brand-link">
 	<img src="{{ asset('img/logo.svg')}}">
 	</a>
 	</div>
@@ -14,7 +14,7 @@
 				<img src="{{ asset('admin/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
 			</div>
 			<div class="info">
-				<a href="/home" class="d-block">{{ Auth::user()->name }}</a>
+				<a href="/admininterface" class="d-block">{{ Auth::user()->name }}</a>
 			</div>
 		</div>
 		<!-- Sidebar Menu -->
