@@ -1,15 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\IndexController;
+use App\Http\Controllers\User\IndexController;
 use App\Http\Controllers\HomeController;
-
-//Admin
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\GenreController;
-use App\Http\Controllers\CountryController;
-use App\Http\Controllers\MovieController;
-use App\Http\Controllers\EpisodeController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\GenreController;
+use App\Http\Controllers\Admin\CountryController;
+use App\Http\Controllers\Admin\MovieController;
+use App\Http\Controllers\Admin\EpisodeController;
 use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
@@ -32,10 +30,6 @@ Route::get('/signupurl', [IndexController::class, 'signup'])->name('signup');
 Route::get('/signinurl', [IndexController::class, 'signin'])->name('signin');
 Route::get('/forgotpasswordurl', [IndexController::class, 'forgotpassword'])->name('forgotpassword');
 
-Auth::routes();
-
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-
 //Admin
 Route::resource('category', CategoryController::class);
 Route::post('resorting', [CategoryController::class,'resorting'])->name('resorting');
@@ -43,3 +37,7 @@ Route::resource('genre', GenreController::class);
 Route::resource('country', CountryController::class);
 Route::resource('episode', EpisodeController::class);
 Route::resource('movie', MovieController::class);
+
+Auth::routes();
+
+Route::get('/admininterface', [HomeController::class, 'index'])->name('home');

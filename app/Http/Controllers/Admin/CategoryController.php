@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Genre;
+use App\Models\Category;
 
-class GenreController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,8 +25,8 @@ class GenreController extends Controller
      */
     public function create()
     {
-        $list = Genre::all();
-        return view('admin.genre.form', compact('list'));
+        $list = Category::all();
+        return view('admin.category.form', compact('list'));
     }
 
     /**
@@ -37,12 +38,12 @@ class GenreController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        $genre = new Genre();
-        $genre->title = $data['title'];
-        $genre->slug = $data['slug'];
-        $genre->description = $data['description'];
-        $genre->status = $data['status'];
-        $genre->save();
+        $category = new Category();
+        $category->title = $data['title'];
+        $category->slug = $data['slug'];
+        $category->description = $data['description'];
+        $category->status = $data['status'];
+        $category->save();
         return redirect()->back();
     }
 
@@ -65,9 +66,9 @@ class GenreController extends Controller
      */
     public function edit($id)
     {
-        $genre = Genre::find($id);
-        $list = Genre::all();
-        return view('admin.genre.form', compact('list','genre'));
+        $category = Category::find($id);
+        $list = Category::all();
+        return view('admin.category.form', compact('list','category'));
     }
 
     /**
@@ -80,12 +81,12 @@ class GenreController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->all();
-        $genre = Genre::find($id);
-        $genre->title = $data['title'];
-        $genre->slug = $data['slug'];
-        $genre->description = $data['description'];
-        $genre->status = $data['status'];
-        $genre->save();
+        $category = Category::find($id);
+        $category->title = $data['title'];
+        $category->slug = $data['slug'];
+        $category->description = $data['description'];
+        $category->status = $data['status'];
+        $category->save();
         return redirect()->back();
     }
 
@@ -97,7 +98,16 @@ class GenreController extends Controller
      */
     public function destroy($id)
     {
-        Genre::find($id)->delete();
+        Category::find($id)->delete();
         return redirect()->back();
+    }
+    public function resorting(Request  $request){
+        $data = $request->all();
+
+        foreach ($data['array_id'] as $key => $value) {
+            $category = Category::find($value);
+            $category->position = $key;
+            $category->save();
+        }
     }
 }
