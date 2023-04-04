@@ -14,11 +14,6 @@
 										<a href="{{route('episode.index')}}" class="btn btn-primary">Danh Sách Tập Phim</a>
 										<div class="card-header">Quản Lý Phim</div>
 										<div class="card-body">
-											@if (session('status'))
-											<div class="alert alert-success" role="alert">
-												{{ session('status') }}
-											</div>
-											@endif
 											@if(!isset($episode))
 											{!! Form::open(['route'=>'episode.store','method'=>'POST']) !!}
 											@else
@@ -32,12 +27,18 @@
 												{!! Form::label('link', 'Link phim', []) !!}
 												{!! Form::text('link', isset($episode) ? $episode->linkphim : '', ['class'=>'form-control']) !!}
 											</div>
+											@if(isset($episode))
+											<div class="form-group">
+												{!! Form::label('episode', 'Tập phim', []) !!}
+												{!! Form::text('episode', isset($episode) ? $episode->episode : '', ['class'=>'form-control',
+												isset($episode) ? 'readonly' : '']) !!}
+											@else
                                             <div class="form-group">
 												{!! Form::label('episode', 'Tập phim', []) !!}
 												<select name="episode" id="show_movie" class="form-control">
-
 												</select>
 											</div>
+											@endif
 											@if(!isset($movie))
 											{!! Form::submit('Thêm tập phim', ['class'=>'btn btn-success']) !!}
 											@else

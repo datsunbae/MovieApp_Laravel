@@ -13,4 +13,8 @@ class Category extends Model
 
     	return $this->hasMany(Movie::class)->orderBy('id','DESC');
     }
+    public function episode()
+    {
+        return $this->hasMany(Episode::class);
+    }
 }

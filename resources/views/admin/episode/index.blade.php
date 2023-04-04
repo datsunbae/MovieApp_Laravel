@@ -33,7 +33,7 @@
 														{!! Form::submit('Xóa', ['class'=>'btn btn-danger']) !!}
 														<br></br>
 														{!! Form::close() !!}
-														<a href="{{route('movie.edit',$episode->id)}}" class="btn btn-warning">Sửa</a>
+														<a href="{{route('episode.edit',$episode->id)}}" class="btn btn-warning">Sửa</a>
 													</td>
 												</tr>
 												@endforeach

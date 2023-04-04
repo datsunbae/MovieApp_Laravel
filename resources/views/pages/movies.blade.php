@@ -47,27 +47,23 @@
 			<!-- end content -->
 			<!-- player -->
 			<div class="col-12 col-xl-6">
-				@foreach($movie->episode as $eps)
-				{!! $eps->linkphim !!}
-				@endforeach
+				{!! $episode_watch->linkphim !!}
 			</div>
 			<!-- end player -->
 			<!-- accordion -->
 			<div class="col-12 col-xl-6">
 				<div class="accordion" id="accordion">
-            @foreach($movie->episode as $key => $tap)
-						<a href="{{route('tap')}}">
-					<div class="accordion__card">
-						
+					@foreach($episode as $key => $eps)
+					<a href="{{route('movies',['slug'=>$eps->movie->slug, 'tap'=>$eps->episode])}}">
+						<div class="accordion__card">
 							<div class="card-header">
-								<button type="button" aria-expanded="{{$key==0 ? 'true' : ''}}">
-								<span>Tập {{($tap->episode)}}</span>
+								<button type="button">
+								<span>Tập {{$eps->episode}}</span>
 								</button>
 							</div>
-						
-					</div>
-               </a>
-						@endforeach
+						</div>
+					</a>
+					@endforeach
 				</div>
 			</div>
 			<!-- end accordion -->
