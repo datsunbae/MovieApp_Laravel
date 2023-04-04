@@ -9,13 +9,6 @@
 						<!-- section title -->
 						<h2 class="section__title">Thể loại</h2>
 						<!-- end section title -->
-
-						<!-- breadcrumb -->
-						<ul class="breadcrumb">
-							<li class="breadcrumb__item"><a href="#">Home</a></li>
-							<li class="breadcrumb__item breadcrumb__item--active">Catalog grid</li>
-						</ul>
-						<!-- end breadcrumb -->
 					</div>
 				</div>
 			</div>
@@ -46,29 +39,7 @@
 								</ul>
 							</div>
 							<!-- end filter item -->
-
-							<!-- filter item -->
-							<div class="filter__item" id="filter__year">
-								<span class="filter__item-label">RELEASE YEAR:</span>
-
-								<div class="filter__item-btn dropdown-toggle" role="button" id="filter-year" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									<div class="filter__range">
-										<div id="filter__years-start"></div>
-										<div id="filter__years-end"></div>
-									</div>
-									<span></span>
-								</div>
-
-								<div class="filter__item-menu filter__item-menu--range dropdown-menu" aria-labelledby="filter-year">
-									<div id="filter__years"></div>
-								</div>
-							</div>
-							<!-- end filter item -->
 						</div>
-						
-						<!-- filter btn -->
-						<button class="filter__btn" type="button">apply filter</button>
-						<!-- end filter btn -->
 					</div>
 				</div>
 			</div>

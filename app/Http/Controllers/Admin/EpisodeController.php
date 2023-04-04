@@ -7,9 +7,20 @@ use App\Models\Episode;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+
 
 class EpisodeController extends Controller
 {
+    use AuthenticatesUsers;
+
+    /**
+     * Where to redirect users after login.
+     *
+     * @var string
+     */
+    protected $redirectTo = RouteServiceProvider::ADMIN;
     /**
      * Display a listing of the resource.
      *
